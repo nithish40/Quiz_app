@@ -1,0 +1,200 @@
+/* signup.css */
+:root {
+    --primary-color: #4839E5;
+    --primary-light: #5C4EFF;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav {
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+nav h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.outersignup {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+.signup {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--primary-color);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 400px;
+    animation: slideUp 0.5s ease-out;
+}
+
+.signup h2.bgclr {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.signup input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.signup input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(72, 57, 229, 0.1);
+}
+
+.signup input::placeholder {
+    color: #999;
+}
+
+.signup input[type="password"] {
+    letter-spacing: 0.2em;
+}
+
+.register {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+}
+
+.register:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.register:active {
+    transform: translateY(0);
+}
+
+.error {
+    color: var(--error-color);
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 6px;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.success {
+    color: var(--success-color);
+    text-align: center;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 6px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.signup p {
+    text-align: center;
+    color: #666;
+    margin: 0;
+}
+
+.signup a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.signup a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translateX(-1px);
+    }
+    20%, 80% {
+        transform: translateX(2px);
+    }
+    30%, 50%, 70% {
+        transform: translateX(-4px);
+    }
+    40%, 60% {
+        transform: translateX(4px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Password Strength Indicator (optional) */
+.signup input[type="password"]:valid {
+    border-color: var(--success-color);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .signup {
+        padding: 2rem;
+    }
+
+    .signup h2.bgclr {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+
+    nav h2 {
+        font-size: 1.5rem;
+    }
+
+    .signup input {
+        padding: 0.8rem;
+        margin-bottom: 1rem;
+    }
+}
